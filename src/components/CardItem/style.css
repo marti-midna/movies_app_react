@@ -1,0 +1,15 @@
+
+.carditem {
+    border: 1px solid red;
+    width: 30%;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.carditem img {
+    width: 200px;
+}
+
+.carditem ul li {
+    list-style-type: none;
+}
