@@ -2,7 +2,7 @@ import './style.css';
 import { delMovie } from '../../utils';
 
 export function CardItem({ cardData }) {
-    console.log('---->', cardData);
+    // console.log('---->', cardData);
 
     const handleDelete = (id) => {
         delMovie(id).then(() => {

@@ -33,52 +33,43 @@ export const delMovie = async (id) => {
     return data;
 }
 
-// export const addMovie = async () => {
-//     const post = await fetch("https://edgemony-backend.herokuapp.com/movies", {
-//         method: 'POST' , 
-//         headers: {"content-type" : "application/JSON"},
-//         body: JSON.stringify({
-//             // description: inputDescription.value,
-//             // genres: InputCategories.value,
-//             // poster: inputPoster.value,
-//             // title:inputTitle.value,
-//             // image: 
-//             // year: inputYear.value,
-//         })
+export const addMovie = async (body) => {
+    await fetch("https://edgemony-backend.herokuapp.com/movies", {
+        method: 'POST' , 
+        headers: {"content-type" : "application/JSON"},
+        body: JSON.stringify(body)
         
-//     })
-//     const data = await post.json();
-//     return data;
-// }
+    })
+}
 //--------------------
-const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
+// const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
 
 // GET
 
 // const GET = () => fetch(BASE_URL).then((res) => res.json);
 
 //POST
-const POST = (body) => 
-    fetch(BASE_URL, {
-    method: "POST",
-    headers: {
-        "Content-type" : "application/json",
-    },
-    body: JSON.stringify(body),
-});
+// const POST = (body) => 
+//     fetch(BASE_URL, {
+//     method: "POST",
+//     headers: {
+//         "Content-type" : "application/json",
+//     },
+//     body: JSON.stringify(body),
+// });
 
 //DELETE
 // const DELETE = (id) => fetch(`${BASE_URL}/${id}`, {method: "DELETE"});
 
 //PUT
 
-const PUT = (id,body) =>
-    fetch(`${BASE_URL}/${id}`, {
-    method: "PUT",
-    headers: {
-        "Content-type" : "application/json"
-    },
-    body: JSON.stringify(body),
-});
+// const PUT = (id,body) =>
+//     fetch(`${BASE_URL}/${id}`, {
+//     method: "PUT",
+//     headers: {
+//         "Content-type" : "application/json"
+//     },
+//     body: JSON.stringify(body),
+// });
 
-export { POST, PUT}
+// export { POST, PUT}

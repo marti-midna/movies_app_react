@@ -1,6 +1,6 @@
 import './style.css';
 import { useState } from 'react';
-import { POST } from '../../utils';
+import { addMovie } from '../../utils';
 
 export function Input() {
 
@@ -13,7 +13,7 @@ export function Input() {
     const unStringifyGenres = (genres) => genres.split(",");
 
     const addNewMovie = (e) => {
-        // e.prevendtDefault();
+        e.preventDefault();
         console.log('-->>>>POST TUO QUI', {
             title,
             year,
@@ -22,19 +22,20 @@ export function Input() {
             description,
         });
 
-        POST({
+        addMovie({
             title,
             year,
             genres: unStringifyGenres(genres),
             poster,
             description,
-        });
+        }).then(() => window.location.reload());
+        
     };
 
     return(
         <div className="form">
             <h2>crea una nuova cardfilm!</h2>
-            <form >
+            <form onSubmit={addNewMovie}>
                 <label htmlFor='title'>Title: </label>
                 <input 
                     value={title} 
@@ -65,7 +66,7 @@ export function Input() {
                     onChange={(e) => setGenres(e.target.value)} 
                     type="text" id="genre" name="genre" placeholder="genere" required/>
                 
-                <button onClick={() => addNewMovie()}>Manda</button>
+                <input type="submit" value="Send it!" />
             </form>
         </div>
     )
