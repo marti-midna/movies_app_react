@@ -8,8 +8,9 @@ export default function CardList() {
     const [moviesData, setMoviesData] = useState([]);
 
     useEffect(() => {
-        getMovies().then((data)  => setMoviesData(data));
+        getMovies().then((data) => setMoviesData(data));
     }, []);
+
 
     return(
         <div className='cardlist'>
@@ -17,5 +18,5 @@ export default function CardList() {
             {moviesData.length && 
             moviesData.map((movie) => <CardItem cardData={movie} key={movie.id}/>)}
         </div>
-    )
+    );
 }

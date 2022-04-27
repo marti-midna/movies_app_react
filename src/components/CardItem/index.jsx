@@ -2,7 +2,7 @@ import './style.css';
 import { delMovie } from '../../utils';
 
 export function CardItem({ cardData }) {
-    // console.log('---->', cardData);
+    console.log('---->', cardData);
 
     const handleDelete = (id) => {
         delMovie(id).then(() => {
@@ -13,15 +13,16 @@ export function CardItem({ cardData }) {
     return(
         <div className='carditem' key={cardData.id}>
             <button onClick={() => handleDelete(cardData.id)}>Elimina Card</button>
-            <h2><a href="#">{cardData?.title}</a></h2>
+            <h2>{cardData?.title}</h2>
             <p>{cardData?.year}</p>
             <img src={cardData?.poster} alt={cardData?.title}></img>
             <p>{cardData?.description}</p>
 
             <div className='genres'>
                 <ul>
-                    {
-                        cardData?.genres?.map((genre, index) => 
+                    {   
+                        cardData.genres &&
+                        cardData.genres.map((genre, index) => 
                             (<li key={index}>{genre}</li>)) 
                     } 
                 </ul>
@@ -29,4 +30,11 @@ export function CardItem({ cardData }) {
         </div>
     )
 }
+//
 
+
+//MODO ALTERNATIVO DI CONTROLLARE SE I GENERI CI SONO E SE CI SONO VANNO MAPPATI
+//                    {   
+//     cardData?.genres?.map((genre, index) => 
+//         (<li key={index}>{genre}</li>)) 
+// } 
