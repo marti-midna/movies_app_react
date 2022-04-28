@@ -21,7 +21,7 @@ export function CardItem({ cardData }) {
             <div className='genres'>
                 <ul>
                     {   
-                        cardData.genres &&
+                        cardData.genres.length &&
                         cardData.genres.map((genre, index) => 
                             (<li key={index}>{genre}</li>)) 
                     } 

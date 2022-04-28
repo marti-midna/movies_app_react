@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { CardItem } from '../CardItem';
 import { getMovies } from '../../utils';
 
-export default function CardList() {
+export default function CardList({searchInput}) {
 
     const [moviesData, setMoviesData] = useState([]);
 
@@ -17,6 +17,7 @@ export default function CardList() {
             
             {moviesData.length && 
             moviesData.map((movie) => <CardItem cardData={movie} key={movie.id}/>)}
+
         </div>
     );
 }

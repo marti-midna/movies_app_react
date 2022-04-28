@@ -2,7 +2,7 @@ import './style.css';
 import { useState } from 'react';
 import { addMovie } from '../../utils';
 
-export function Input() {
+export function Input(setModalVisibility) {
 
     const [title, setTitle] = useState('');
     const [year, setYear] = useState('');
@@ -10,7 +10,6 @@ export function Input() {
     const [poster, setPoster] = useState('');
     const [description, setDescription] = useState('');
 
-    const [isVisible, setVisibility] = useState(false);
 
     const unStringifyGenres = (genres) => genres.split(",");
 
@@ -32,16 +31,16 @@ export function Input() {
             description,
         }).then(() => window.location.reload());
         
+        setModalVisibility(true);
     };
 
-    const timeModale = () => {
-        setVisibility(true);
-        setTimeout( function () {setVisibility(false)}, 3000);
-    }
+    // const timeModale = () => {
+    //     setVisibility(true);
+    //     setTimeout( function () {setVisibility(false)}, 3000);
+    // }
 
     return(
         <div className="form">
-            <h2>crea una nuova cardfilm!</h2>
             <form onSubmit={addNewMovie}>
                 <label htmlFor='title'>Title: </label>
                 <input 
@@ -73,12 +72,8 @@ export function Input() {
                     onChange={(e) => setGenres(e.target.value)} 
                     type="text" id="genre" name="genre" placeholder="genere" required/>
                 
-                <input type="submit" value="Send it!" onClick={() => timeModale()}/>
+                <input type="submit" value="Send it!"/>
             </form>
-
-            {isVisible &&
-                <div className='confirm'>Fantastico! Hai aggiunto un film alla tua lista!</div>
-            }
         </div>
     )
 }

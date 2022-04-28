@@ -1,8 +1,8 @@
 import './App.css';
 
-import { Input } from './components/Input';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Home } from './pages/Home';
+import {AddMovie} from './pages/AddMovie'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         </nav>
           
           <Routes>
-            <Route path="/add-movie" element={<Input/>} />
+            <Route path="/add-movie" element={<AddMovie/>} />
             <Route path="/" element={<Home/>} />
           </Routes>
         </div>
