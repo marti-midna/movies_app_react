@@ -1,0 +1,33 @@
+
+form {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.Form {
+    height: 20%;
+    
+
+    input[type="text"] {
+        padding-left: 0.5rem;
+        height: 30px;
+        border-style: unset;
+        border: 2px solid rgb(177, 177, 177);
+        border-radius:5px;
+    }
+
+    input[type="submit"] {
+        all:unset;
+        height: 30px;
+        background-color: rgb(231, 231, 231);
+        padding: 0px 1rem;
+        border-radius:5px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: rgb(88, 177, 0);
+        color: white;
+    }
+}

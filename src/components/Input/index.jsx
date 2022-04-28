@@ -1,4 +1,4 @@
-import './style.css';
+import styles from './styles.module.scss';
 import { useState } from 'react';
 import { addMovie } from '../../utils';
 
@@ -40,9 +40,9 @@ export function Input({setModalVisibility}) {
     // }
 
     return(
-        <div className="form">
+        <div className={styles.Form}>
             <form onSubmit={addNewMovie}>
-                <label htmlFor='title'>Title: </label>
+                <label htmlFor='title'></label>
                 <input 
                     value={title} 
                     onChange={(e) => setTitle(e.target.value)} 
@@ -52,27 +52,27 @@ export function Input({setModalVisibility}) {
                     placeholder="titolo film"
                     required/>
 
-                <label htmlFor='img'>Poster: </label>
+                <label htmlFor='img'></label>
                 <input value={poster} 
                     onChange={(e) => setPoster(e.target.value)} 
                     type="text" id="poster" name="poster" placeholder="poster" required/>
 
-                <label htmlFor='year'>Year: </label>
+                <label htmlFor='year'></label>
                 <input value={year} 
                     onChange={(e) => setYear(e.target.value)} 
                     type="text" id="year" name="year"  placeholder="year" required/>
 
-                <label htmlFor='description'>Description: </label>
+                <label htmlFor='description'></label>
                 <input value={description} 
                     onChange={(e) => setDescription(e.target.value)} 
                     type="text" id="description" name="description" placeholder="description" required/>
 
-                <label htmlFor='genre'>Genre: </label>
+                <label htmlFor='genre'></label>
                 <input value={genres} 
                     onChange={(e) => setGenres(e.target.value)} 
                     type="text" id="genre" name="genre" placeholder="genere" required/>
                 
-                <input type="submit" value="Send it!"/>
+                <input type="submit" value="Conferma"/>
             </form>
         </div>
     )

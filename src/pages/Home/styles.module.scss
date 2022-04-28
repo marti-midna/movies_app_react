@@ -1,0 +1,18 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        padding: 1rem;
+    }
+    
+    input[type="text"] {
+    margin-left: 1rem;    
+    padding-left: 0.5rem;
+    height: 30px;
+    border-style: unset;
+    border: 2px solid rgb(177, 177, 177);
+    border-radius:5px;
+    width: 50%;
+    }
+}

@@ -1,0 +1,16 @@
+
+.Carditem {
+    border: 1px solid red;
+    width: 30%;
+    margin: 1rem;
+    padding: 0.5rem;
+
+    img {
+        width: 200px;
+    }
+
+    ul {
+        li {
+        list-style-type: none;}
+    }
+}

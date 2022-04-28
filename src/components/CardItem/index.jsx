@@ -1,4 +1,4 @@
-import './style.css';
+import styles from './styles.module.scss';
 import { delMovie } from '../../utils';
 
 export function CardItem({ cardData }) {
@@ -11,7 +11,7 @@ export function CardItem({ cardData }) {
     }
 
     return(
-        <div className='carditem' key={cardData.id}>
+        <div className={styles.Carditem} key={cardData.id}>
             <button onClick={() => handleDelete(cardData.id)}>Elimina Card</button>
             <h2>{cardData?.title}</h2>
             <p>{cardData?.year}</p>

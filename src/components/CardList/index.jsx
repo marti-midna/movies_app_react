@@ -1,4 +1,4 @@
-import "./style.css";
+import styles from "./styles.module.scss";
 import { useState, useEffect } from "react";
 import { CardItem } from "../CardItem";
 import { getMovies } from "../../utils";
@@ -11,15 +11,16 @@ export default function CardList({ searchInput }) {
   }, []);
 
   return (
-    <div className="cardlist">
-      {moviesData.length &&
+    <div className={styles.Cardlist}>
+      {/* {moviesData.length &&
         moviesData
         .filter((movie) =>
           movie.title
             .trim()
             .toLowerCase()
             .includes(
-              searchInput.trim().toLowerCase() ||
+              searchInput.trim().toLowerCase() 
+              ||
                 movie.genres
                   .toString()
                   .trim()
@@ -27,7 +28,7 @@ export default function CardList({ searchInput }) {
                   .includes(searchInput.trim().toLowerCase())
             )
             .map((movie) => <CardItem cardData={movie} key={movie.id} />)
-        )}
+        )} */}
     </div>
   );
 }

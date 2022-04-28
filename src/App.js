@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.module.scss';
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Home } from './pages/Home';
@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav className='navbar'>
+        <nav className={styles.Navbar}>
           <ul>
             <li>
               <Link to="/">Home</Link>
