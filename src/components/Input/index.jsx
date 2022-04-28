@@ -10,6 +10,8 @@ export function Input() {
     const [poster, setPoster] = useState('');
     const [description, setDescription] = useState('');
 
+    const [isVisible, setVisibility] = useState(false);
+
     const unStringifyGenres = (genres) => genres.split(",");
 
     const addNewMovie = (e) => {
@@ -31,6 +33,11 @@ export function Input() {
         }).then(() => window.location.reload());
         
     };
+
+    const timeModale = () => {
+        setVisibility(true);
+        setTimeout( function () {setVisibility(false)}, 3000);
+    }
 
     return(
         <div className="form">
@@ -66,8 +73,12 @@ export function Input() {
                     onChange={(e) => setGenres(e.target.value)} 
                     type="text" id="genre" name="genre" placeholder="genere" required/>
                 
-                <input type="submit" value="Send it!" />
+                <input type="submit" value="Send it!" onClick={() => timeModale()}/>
             </form>
+
+            {isVisible &&
+                <div className='confirm'>Fantastico! Hai aggiunto un film alla tua lista!</div>
+            }
         </div>
     )
 }
