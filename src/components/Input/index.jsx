@@ -2,7 +2,7 @@ import './style.css';
 import { useState } from 'react';
 import { addMovie } from '../../utils';
 
-export function Input(setModalVisibility) {
+export function Input({setModalVisibility}) {
 
     const [title, setTitle] = useState('');
     const [year, setYear] = useState('');
@@ -29,7 +29,7 @@ export function Input(setModalVisibility) {
             genres: unStringifyGenres(genres),
             poster,
             description,
-        }).then(() => window.location.reload());
+        });
         
         setModalVisibility(true);
     };
