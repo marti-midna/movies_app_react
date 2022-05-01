@@ -6,25 +6,3 @@
 
 
 
-.Navbar {  
-    padding: 1.2rem;
-
-    ul {
-    display: flex;
-    justify-content: flex-end;
-    gap: 30px;
-    list-style: none;
-    font-weight: 600;
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    
-        a:hover {
-            text-decoration: 2px underline;
-            color: black;
-        }
-    }
-    
-}

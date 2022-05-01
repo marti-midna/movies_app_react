@@ -1,11 +1,15 @@
-.Home {
-    display: flex;
-    flex-direction: column;
+.Home{
+    
+    .Search{
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
 
     label {
         padding: 1rem;
     }
-    
+
     input[type="text"] {
     margin-left: 1rem;    
     padding-left: 0.5rem;

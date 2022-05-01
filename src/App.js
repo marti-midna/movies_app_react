@@ -1,29 +1,24 @@
-import styles from './App.module.scss';
+import styles from "./App.module.scss";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Home } from './pages/Home';
-import {AddMovie} from './pages/AddMovie'
+import { Home } from "./pages/Home";
+import { AddMovie } from "./pages/AddMovie";
+import { FilterCategory } from "./pages/FilterCategory";
+import { EditMovie } from "./pages/EditMovie";
+import { Header } from "./components/Header";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav className={styles.Navbar}>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/add-movie">Add Movie</Link>
-            </li>
-          </ul>
-        </nav>
-          
-          <Routes>
-            <Route path="/add-movie" element={<AddMovie/>} />
-            <Route path="/" element={<Home/>} />
-          </Routes>
-        </div>
+        <Header/>
+        <Routes>
+          <Route path="/edit-movie/:id" element={<EditMovie />} />
+          <Route path="/filterwithcategory" element={<FilterCategory />} />
+          <Route path="/add-movie" element={<AddMovie />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

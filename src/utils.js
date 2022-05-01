@@ -14,9 +14,9 @@
 
 // includa una funzione per il metodo PUT, per modificare un determinato movie
 
-export async function getMovies() {
+export async function getMovies(id = "") {
 
-    const response = await fetch("https://edgemony-backend.herokuapp.com/movies")
+    const response = await fetch(`https://edgemony-backend.herokuapp.com/movies/${id}`)
     const res = await response.json();
     console.log(response, res);
     
@@ -42,7 +42,7 @@ export const addMovie = async (body) => {
     })
 }
 //--------------------
-// const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
+const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
 
 // GET
 
@@ -58,18 +58,15 @@ export const addMovie = async (body) => {
 //     body: JSON.stringify(body),
 // });
 
-//DELETE
-// const DELETE = (id) => fetch(`${BASE_URL}/${id}`, {method: "DELETE"});
-
 //PUT
 
-// const PUT = (id,body) =>
-//     fetch(`${BASE_URL}/${id}`, {
-//     method: "PUT",
-//     headers: {
-//         "Content-type" : "application/json"
-//     },
-//     body: JSON.stringify(body),
-// });
+export const PUT = (id,body) =>
+    fetch(`${BASE_URL}/${id}`, {
+    method: "PUT",
+    headers: {
+        "Content-type" : "application/json"
+    },
+    body: JSON.stringify(body),
+});
 
 // export { POST, PUT}

@@ -12,14 +12,14 @@ export default function CardList({ searchInput }) {
 
   return (
     <div className={styles.Cardlist}>
-      {/* {moviesData.length &&
+      {moviesData.length &&
         moviesData
         .filter((movie) =>
           movie.title
             .trim()
             .toLowerCase()
             .includes(
-              searchInput.trim().toLowerCase() 
+              searchInput.trim().toLowerCase()) 
               ||
                 movie.genres
                   .toString()
@@ -28,7 +28,8 @@ export default function CardList({ searchInput }) {
                   .includes(searchInput.trim().toLowerCase())
             )
             .map((movie) => <CardItem cardData={movie} key={movie.id} />)
-        )} */}
+        
+        }
     </div>
   );
 }

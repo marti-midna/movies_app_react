@@ -3,6 +3,7 @@ form {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -21,9 +22,11 @@ form {
     input[type="submit"] {
         all:unset;
         height: 30px;
+        width: 100px;
         background-color: rgb(231, 231, 231);
         padding: 0px 1rem;
         border-radius:5px;
+        text-align: center;
     }
 
     input[type="submit"]:hover {
