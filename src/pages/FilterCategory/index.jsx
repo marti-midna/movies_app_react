@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export function FilterCategory() {
   const [category, setCategory] = useState([]);
-  const [isActive, setActive] = useState();
+  // const [isActive, setActive] = useState();
 
   const selectedCategory = (event) => {
     setCategory([...category, event.target.value]);

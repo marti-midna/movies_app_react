@@ -3,7 +3,7 @@ import { useState } from "react";
 import { addMovie, PUT } from "../../utils";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export function Input({ setModalVisibility, callType }) {
+export function Input({ setModalVisibility, callType, editCallBack }) {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [genres, setGenres] = useState("");
@@ -47,6 +47,7 @@ export function Input({ setModalVisibility, callType }) {
         description,
       });
       navigate('/');
+      editCallBack();
       // setModalVisibility(true);
     }
   };
