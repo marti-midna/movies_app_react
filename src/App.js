@@ -11,27 +11,21 @@ import { useState } from "react";
 
 function App() {
 
-  const [alert, setAlert] = useState({
-    visible: false,
-    content: '',
-  });
+  const [alert, setAlert] = useState('');
 
-  const editSuccess = () => {
-    setAlert({
-      visible: true,
-      content: 'Scheda modificata con successo!',
-    });
+  const editSuccess = (value) => {
+    setAlert(value);
   }
 
   return (
     <Router>
       <div className="App">
         <Header/>
-        <Alert visible={alert.visible} content={alert.content}/>
+        <Alert alert={alert}/>
         <Routes>
-          <Route path="/edit-movie/:id" element={<EditMovie editCallBack={editSuccess}/>} />
+          <Route path="/edit-movie/:id" element={<EditMovie/>} />
           <Route path="/filterwithcategory" element={<FilterCategory />} />
-          <Route path="/add-movie" element={<AddMovie />} />
+          <Route path="/add-movie" element={<AddMovie editSuccess={editSuccess}/>} />
           <Route path="/" element={<Home />} />
         </Routes>
       </div>

@@ -18,10 +18,10 @@ export const EditMovie = ({ isVisible, setModalVisibility }) => {
   }, [movieId]);
   return (
     <>
-      <Modal
+      {/* <Modal
         isVisible={true}
         text="Fantastico! La tua Card è stata modificata! Torna alla Home"
-      />
+      /> */}
 
       <div className={style.EditMovie}>
         {console.log(movieData)}
