@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import { useState } from "react";
 import { addMovie, PUT } from "../../utils";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Input({ setModalVisibility, callType }) {
   const [title, setTitle] = useState("");
@@ -9,6 +9,8 @@ export function Input({ setModalVisibility, callType }) {
   const [genres, setGenres] = useState("");
   const [poster, setPoster] = useState("");
   const [description, setDescription] = useState("");
+
+  const navigate = useNavigate();
 
   const location = useLocation('');
   const movieId = location.pathname.split('/').reverse()[0];
@@ -34,8 +36,8 @@ export function Input({ setModalVisibility, callType }) {
         poster,
         description,
       });
-
-      setModalVisibility(true);
+      navigate('/');
+      // setModalVisibility(true);
     } else {
       PUT(movieId, {
         title,
@@ -44,8 +46,8 @@ export function Input({ setModalVisibility, callType }) {
         poster,
         description,
       });
-      setModalVisibility(true);
-
+      navigate('/');
+      // setModalVisibility(true);
     }
   };
 
