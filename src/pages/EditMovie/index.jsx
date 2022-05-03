@@ -1,14 +1,15 @@
 import style from "./style.module.scss";
 import { Input } from "../../components/Input";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovies } from "../../utils";
 import { CardItem } from "../../components/CardItem";
 import { Modal } from "../../components/Modal";
 
-export const EditMovie = ({ isVisible, setModalVisibility }) => {
+export const EditMovie = ({ isVisible, setModalVisibility, speaktoalertstate }) => {
 
   let location = useLocation();
+  const navigate = useNavigate();
     
   const [movieData, setMovieData] = useState({});
   const movieId = location.pathname.split("/").reverse()[0];
@@ -16,6 +17,16 @@ export const EditMovie = ({ isVisible, setModalVisibility }) => {
   useEffect(() => {
     getMovies(movieId).then((data) => setMovieData(data));
   }, [movieId]);
+
+  const facciounaPut = () => {
+    console.log("hai fatto una put, ssei su editmovie, vai a parlare con app");
+    speaktoalertstate({
+      visible: true,
+      content: "La Card è stata modificata",
+    });
+    navigate("/");
+  };
+
   return (
     <>
       {/* <Modal
@@ -28,7 +39,7 @@ export const EditMovie = ({ isVisible, setModalVisibility }) => {
         <CardItem cardData={movieData} />
         <div className={style.ModifySection}>
           <h2>Modifica i campi della card</h2>
-          <Input setModalVisibility={setModalVisibility} callType="PUT" />
+          <Input setModalVisibility={setModalVisibility} dicoadAddMoviechehofattounaput={facciounaPut} callType="PUT" />
         </div>
       </div>
     </>

@@ -16,15 +16,6 @@ export function AddMovie(props) {
     navigate("/");
   };
 
-  const facciounaPut = () => {
-    console.log("hai fatto una put, ssei su addmovie, vai a parlare con app");
-    props.speaktoalertstate({
-      visible: true,
-      content: "La Card è stata modificata",
-    });
-    navigate("/");
-  };
-
   return (
     <>
       {/* <Modal
@@ -36,7 +27,6 @@ export function AddMovie(props) {
         <h2>Compila tutti i campi per aggiungere un film alla tua lista</h2>
         <Input
           completeCallback={submitComplete}
-          dicoadAddMoviechehofattounaput={facciounaPut}
           callType="addMovie"
         />
       </div>

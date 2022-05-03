@@ -35,9 +35,9 @@ function App() {
         <Header/>
         <Alert alert={alert} hideCallback={hideAlert} />
         <Routes>
-          <Route path="/edit-movie/:id" element={<EditMovie/>} />
+          <Route path="/edit-movie/:id" element={<EditMovie speaktoalertstate={speaktoalertstate} />} />
           <Route path="/filterwithcategory" element={<FilterCategory />} />
-          <Route path="/add-movie" element={<AddMovie editSuccess={editSuccess} speaktoalertstate={speaktoalertstate}/>} />
+          <Route path="/add-movie" element={<AddMovie editSuccess={editSuccess} />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
