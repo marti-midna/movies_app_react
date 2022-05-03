@@ -3,7 +3,7 @@ import { useState } from "react";
 import { addMovie, PUT } from "../../utils";
 import { useLocation} from "react-router-dom";
 
-export function Input({ setModalVisibility, callType }) {
+export function Input({ completeCallback,callType }) {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [genres, setGenres] = useState("");
@@ -17,7 +17,7 @@ export function Input({ setModalVisibility, callType }) {
 
   const unStringifyGenres = (genres) => genres.split(",");
 
-  const addNewMovie = (e) => {
+  const addNewMovie = async (e) => {
     e.preventDefault();
     console.log("-->>>>POST TUO QUI", {
       title,
@@ -28,17 +28,14 @@ export function Input({ setModalVisibility, callType }) {
     });
 
     if (callType === "addMovie") {
-      addMovie({
+      await addMovie({
         title,
         year,
         genres: unStringifyGenres(genres),
         poster,
         description,
       });
-      setModalVisibility({
-        visible: true,
-        content: "Card pubblicata!",
-      });
+      completeCallback();
 
     } else {
       PUT(movieId, {

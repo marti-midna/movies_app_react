@@ -11,17 +11,25 @@ import { useState } from "react";
 
 function App() {
 
-  const [alert, setAlert] = useState('');
+  const [alert, setAlert] = useState({
+    visible: false,
+    content: '',
+  });
 
   const editSuccess = (value) => {
     setAlert(value);
   }
 
+  const hideAlert = () => setAlert({
+    visible:false,
+    content:'',
+  })
+
   return (
     <Router>
       <div className="App">
         <Header/>
-        <Alert alert={alert}/>
+        <Alert alert={alert} hideCallback={hideAlert}/>
         <Routes>
           <Route path="/edit-movie/:id" element={<EditMovie/>} />
           <Route path="/filterwithcategory" element={<FilterCategory />} />

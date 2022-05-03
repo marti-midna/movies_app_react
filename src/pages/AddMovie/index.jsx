@@ -5,24 +5,18 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function AddMovie(props) {
-  const [isModalVisible, setModalVisibility] = useState('');
 
   const navigate = useNavigate();
 
-  const newModal = isModalVisible;
-  addSuccess(newModal);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setModalVisibility(false);
-  //   }, 6000);
-  // }, [isModalVisible]);
-  console.log("questi sono i valori", newModal);
-
-  function addSuccess(value) {
-    props.editSuccess(value);
-    navigate("/");
+  const submitComplete = () => {
+    console.log('submit andato');
+    props.editSuccess({
+      visible: true,
+      content:'Card creata!',
+    });
+    navigate('/');
   }
+
 
   return (
     <>
@@ -33,7 +27,7 @@ export function AddMovie(props) {
 
       <div className={styles.AddMovie}>
         <h2>Compila tutti i campi per aggiungere un film alla tua lista</h2>
-        <Input setModalVisibility={setModalVisibility} callType="addMovie" />
+        <Input completeCallback={submitComplete} callType="addMovie" />
       </div>
     </>
   );

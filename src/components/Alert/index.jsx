@@ -1,16 +1,19 @@
-import styles from './styles.module.scss';
-import { useState } from 'react';
+import styles from "./styles.module.scss";
+import { useEffect } from "react";
 
+export const Alert = ({ alert, hideCallback }) => {
+  const visible = alert.visible || false;
+  const content = alert.content || "";
 
-export const Alert = ({alert}) => {
+  useEffect(() => {
+    if (visible === true) {
+      console.log("alert visibile");
+      setTimeout(() => hideCallback(), 3000);
+    }
+  }, [visible]);
 
-    const visible = alert.visible || false;
-    const content = alert.content || "";
+  //classe alert sempre presente, se props visible è true aggiungimi la classe visible altrimenti stringa vuota
+  const classes = [styles.alert, visible ? styles.visible : ""];
 
-    //classe alert sempre presente, se props visible è true aggiungimi la classe visible altrimenti stringa vuota
-    const classes = [styles.alert, visible ? styles.visible : ""];
-
-  return (
-    <div className={classes.join(" ")}>{content}</div>
-  )
-}
+  return <div className={classes.join(" ")}>{content}</div>;
+};
