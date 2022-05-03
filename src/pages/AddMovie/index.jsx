@@ -5,18 +5,25 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function AddMovie(props) {
-
   const navigate = useNavigate();
 
   const submitComplete = () => {
-    console.log('submit andato');
+    console.log("submit andato");
     props.editSuccess({
       visible: true,
-      content:'Card creata!',
+      content: "Card creata!",
     });
-    navigate('/');
-  }
+    navigate("/");
+  };
 
+  const facciounaPut = () => {
+    console.log("hai fatto una put, ssei su addmovie, vai a parlare con app");
+    props.speaktoalertstate({
+      visible: true,
+      content: "La Card è stata modificata",
+    });
+    navigate("/");
+  };
 
   return (
     <>
@@ -27,7 +34,11 @@ export function AddMovie(props) {
 
       <div className={styles.AddMovie}>
         <h2>Compila tutti i campi per aggiungere un film alla tua lista</h2>
-        <Input completeCallback={submitComplete} callType="addMovie" />
+        <Input
+          completeCallback={submitComplete}
+          dicoadAddMoviechehofattounaput={facciounaPut}
+          callType="addMovie"
+        />
       </div>
     </>
   );

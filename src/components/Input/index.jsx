@@ -3,7 +3,7 @@ import { useState } from "react";
 import { addMovie, PUT } from "../../utils";
 import { useLocation} from "react-router-dom";
 
-export function Input({ completeCallback,callType }) {
+export function Input({ completeCallback, dicoadAddMoviechehofattounaput, callType }) {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [genres, setGenres] = useState("");
@@ -38,13 +38,15 @@ export function Input({ completeCallback,callType }) {
       completeCallback();
 
     } else {
-      PUT(movieId, {
+      await PUT(movieId, {
         title,
         year,
         genres: unStringifyGenres(genres),
         poster,
         description,
       });
+
+      dicoadAddMoviechehofattounaput();
     }
   };
 

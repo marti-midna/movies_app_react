@@ -25,15 +25,19 @@ function App() {
     content:'',
   })
 
+  const speaktoalertstate = (value) => {
+    setAlert(value);
+  }
+
   return (
     <Router>
       <div className="App">
         <Header/>
-        <Alert alert={alert} hideCallback={hideAlert}/>
+        <Alert alert={alert} hideCallback={hideAlert} />
         <Routes>
           <Route path="/edit-movie/:id" element={<EditMovie/>} />
           <Route path="/filterwithcategory" element={<FilterCategory />} />
-          <Route path="/add-movie" element={<AddMovie editSuccess={editSuccess}/>} />
+          <Route path="/add-movie" element={<AddMovie editSuccess={editSuccess} speaktoalertstate={speaktoalertstate}/>} />
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
