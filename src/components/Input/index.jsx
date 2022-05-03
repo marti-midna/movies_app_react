@@ -90,6 +90,7 @@ export function Input({ completeCallback, dicoadAddMoviechehofattounaput, callTy
           id="description"
           name="description"
           placeholder="description"
+          maxlength="165"
           required
         />
 
@@ -100,6 +101,7 @@ export function Input({ completeCallback, dicoadAddMoviechehofattounaput, callTy
           id="genre"
           name="genre"
           placeholder="genere"
+          maxlength="62"
           required
         />
 

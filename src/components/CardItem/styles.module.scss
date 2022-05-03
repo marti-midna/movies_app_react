@@ -30,10 +30,6 @@
             color: black;
         }
 
-        // h2:hover {
-        //     color: red;
-        // }
-
         p {
             padding-left: 0.5rem;
             color: rgb(120, 120, 120);
@@ -41,13 +37,18 @@
     }
 
     .ImgFilm {
-        height: 55%;
-        width: auto;
+        
+        max-width: 214px;
+        height: auto;
+        max-height: 318px;
 
 
         img {
-        height: 300px;
-        border: none;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: aqua;
+            border: none;
         }
     }
 
@@ -71,5 +72,9 @@
             display: flex;
             gap: 10px;
         }
+
+        // li {
+        //     background-color: aqua;
+        // }
     }
 }
