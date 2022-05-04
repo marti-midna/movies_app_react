@@ -1,7 +1,7 @@
 # Nome della action
 name: Deploy React App to GH pages
 
-# "evento" che triggera la action
+# "evento" che triggera questa action
 on:
   push:
     branches: [main]
