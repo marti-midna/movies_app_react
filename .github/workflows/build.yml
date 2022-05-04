@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        # versione di node.js da utilizzare
+        # versione di node.js da utilizzare!
         node-version: [16.14.2]
 
     steps:
