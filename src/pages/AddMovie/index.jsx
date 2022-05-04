@@ -4,7 +4,7 @@ import { Modal } from "../../components/Modal";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function AddMovie(props) {
+function AddMovie(props) {
   const navigate = useNavigate();
 
   const submitComplete = () => {
@@ -33,3 +33,4 @@ export function AddMovie(props) {
     </>
   );
 }
+ export default AddMovie

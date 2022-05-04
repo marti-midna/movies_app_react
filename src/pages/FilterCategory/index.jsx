@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 import CardList from "../../components/CardList";
 import { useState } from "react";
 
-export function FilterCategory() {
+function FilterCategory() {
   const [category, setCategory] = useState([]);
   // const [isActive, setActive] = useState();
 
@@ -44,3 +44,5 @@ export function FilterCategory() {
     </>
   );
 }
+
+export default FilterCategory

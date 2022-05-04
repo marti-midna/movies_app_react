@@ -3,7 +3,7 @@ import CardList from "../../components/CardList";
 import { useState } from "react";
 // import { getMovies } from '../../utils';
 
-export function Home() {
+function Home() {
   const [searchInput, setSearchInput] = useState("");
   // const [moviesData, setMoviesData] = useState([]);
 
@@ -33,3 +33,5 @@ export function Home() {
     </div>
   );
 }
+
+export default Home

@@ -6,7 +6,7 @@ import { getMovies } from "../../utils";
 import { CardItem } from "../../components/CardItem";
 import { Modal } from "../../components/Modal";
 
-export const EditMovie = ({ isVisible, setModalVisibility, speaktoalertstate }) => {
+const EditMovie = ({ isVisible, setModalVisibility, speaktoalertstate }) => {
 
   let location = useLocation();
   const navigate = useNavigate();
@@ -45,3 +45,5 @@ export const EditMovie = ({ isVisible, setModalVisibility, speaktoalertstate }) 
     </>
   );
 };
+
+export default EditMovie
