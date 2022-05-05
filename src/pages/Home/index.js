@@ -3,7 +3,7 @@ import CardList from "../../components/CardList";
 import { useState } from "react";
 // import { getMovies } from '../../utils';
 
-function Home() {
+function Home({parloadApp}) {
   const [searchInput, setSearchInput] = useState("");
   // const [moviesData, setMoviesData] = useState([]);
 
@@ -16,6 +16,10 @@ function Home() {
   //     getMovies().then((data) => setMoviesData(data));
   // })
 
+  const hounvaluechevaacardlist = (value) => {
+    parloadApp(value); 
+    console.log('sei su home');
+  }
   return (
     <div className={styles.Home}>
       <div className={styles.Search}>
@@ -29,7 +33,7 @@ function Home() {
           value={searchInput}
         />
       </div>
-      <CardList searchInput={searchInput} />
+      <CardList  searchInput={searchInput} parloadHome={hounvaluechevaacardlist}/>
     </div>
   );
 }

@@ -2,13 +2,14 @@ import styles from "./styles.module.scss";
 import { delMovie } from "../../utils";
 import { Link } from "react-router-dom";
 
-export function CardItem({ cardData }) {
+export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
   // console.log('---->', cardData);
 
   const handleDelete = (id) => {
-    delMovie(id).then(() => {
-      window.location.reload(false);
-    });
+    sonoincarditemelodicoacardlist();
+    // delMovie(id).then(() => {
+    //   window.location.reload(false);
+    // });
   };
 
   return (

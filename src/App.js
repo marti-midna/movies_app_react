@@ -40,18 +40,36 @@ function App() {
     setAlert(value);
   };
 
+  //modalconfirmdelete
+  const [modalConfirmDelete, setModalConfirmDelete] = useState({
+    visible: false,
+    overlay: false,
+  });
+
+  const parloadApp = (value) => {
+    setModalConfirmDelete(value);
+    console.log('qui ce il valore true di visible')
+  }
+
+  const abortModal = (value) => {
+    console.log('hai chiuso la modale, brava')
+    setModalConfirmDelete(value);
+  }
+
+  // const [delCard, setdelCard] = useState(false);
+
   return (
     <Router>
       <div className="App">
         <Header />
         <Alert alert={alert} hideCallback={hideAlert} />
-        <ModalConfirm />
+        <ModalConfirm modalConfirmDelete={modalConfirmDelete} abortModal={abortModal}/>
         <Routes>
           <Route
             path="/"
             element={
               <Suspense fallback={<Loading />}>
-                <Home />
+                <Home parloadApp={parloadApp}/>
               </Suspense>
             }
           />

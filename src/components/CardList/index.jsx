@@ -3,12 +3,20 @@ import { useState, useEffect } from "react";
 import { CardItem } from "../CardItem";
 import { getMovies } from "../../utils";
 
-export default function CardList({ searchInput }) {
+export default function CardList({ searchInput, parloadHome }) {
   const [moviesData, setMoviesData] = useState([]);
 
   useEffect(() => {
     getMovies().then((data) => setMoviesData(data));
   }, []);
+
+  const sonoincardlist = () => {
+    console.log('sei in cardlist bitch');
+    parloadHome({
+      visible: true,
+      overlay: true,
+    })
+  }
 
   return (
     <div className={styles.Cardlist}>
@@ -27,7 +35,7 @@ export default function CardList({ searchInput }) {
                   .toLowerCase()
                   .includes(searchInput.trim().toLowerCase())
             )
-            .map((movie) => <CardItem cardData={movie} key={movie.id} />)
+            .map((movie) => <CardItem cardData={movie} key={movie.id} sonoincarditemelodicoacardlist={sonoincardlist}/>)
         
         }
     </div>
