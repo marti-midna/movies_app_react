@@ -1,7 +1,7 @@
 {
   "name": "movies_app_react",
   "version": "0.1.0",
-  "homepage": "marti-midna.github.io/movies_app_react/",
+  "homepage": "https://marti-midna.github.io/movies_app_react/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
