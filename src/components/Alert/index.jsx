@@ -9,7 +9,7 @@ export const Alert = ({ alert, hideCallback }) => {
     if (visible === true) {
       console.log("alert visibile");
       setTimeout(() => hideCallback(), 3000);
-    }
+    } // eslint-disable-next-line
   }, [visible]);
 
   //classe alert sempre presente, se props visible è true aggiungimi la classe visible altrimenti stringa vuota

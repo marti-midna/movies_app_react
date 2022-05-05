@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import { Input } from "../../components/Input";
-import { Modal } from "../../components/Modal";
-import { useState, useEffect } from "react";
+// import { Modal } from "../../components/Modal";
+// import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AddMovie(props) {

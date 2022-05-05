@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovies } from "../../utils";
 import { CardItem } from "../../components/CardItem";
-import { Modal } from "../../components/Modal";
+// import { Modal } from "../../components/Modal";
 
 const EditMovie = ({ isVisible, setModalVisibility, speaktoalertstate }) => {
 

@@ -1,4 +1,4 @@
-import styles from "./App.module.scss";
+// import styles from "./App.module.scss";
 import { useState } from "react";
 import { Suspense } from "react";
 import React, { lazy } from 'react';
