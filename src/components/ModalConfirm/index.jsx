@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import { AiFillDelete } from "react-icons/ai";
 
 export const ModalConfirm = ({
   modalConfirmDelete,
@@ -31,6 +32,9 @@ export const ModalConfirm = ({
       <div className={styles.modal}>
         <div className={styles.all}>
           <div className={styles.textmodal}>
+            <div className={styles.cestino}>
+              <AiFillDelete size="4rem" />
+            </div>
             <p>Vuoi eliminare questa Card?</p>
             <div className={styles.Btns}>
               <button onClick={() => delCard()} className={styles.yesbtn}>

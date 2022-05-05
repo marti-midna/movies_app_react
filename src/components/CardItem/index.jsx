@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 import { delMovie } from "../../utils";
 import { Link } from "react-router-dom";
+import { BsPencilFill } from "react-icons/bs";
 
 export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
   // console.log('---->', cardData);
@@ -19,7 +20,7 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
           to={`/edit-movie/${cardData.id}`}
           style={{ textDecoration: "none" }}
         >
-          <button>✏️</button>
+          <button><BsPencilFill color="#444444"/></button>
         </Link>
         <button onClick={() => handleDelete(cardData.id)}>✖️</button>
       </div>
