@@ -26,6 +26,8 @@ function App() {
     content: "",
   });
 
+  const [idCard, setIdCard] = useState();
+
   const editSuccess = (value) => {
     setAlert(value);
   };
@@ -46,9 +48,13 @@ function App() {
     overlay: false,
   });
 
-  const parloadApp = (value) => {
-    setModalConfirmDelete(value);
-    console.log('qui ce il valore true di visible')
+  const parloadApp = (id) => {
+    setModalConfirmDelete({
+      visible: true,
+      overlay: true,
+    });
+    setIdCard(id);
+    console.log('qui ce il valore true di visible', id);
   }
 
   const abortModal = (value) => {
@@ -63,7 +69,7 @@ function App() {
       <div className="App">
         <Header />
         <Alert alert={alert} hideCallback={hideAlert} />
-        <ModalConfirm modalConfirmDelete={modalConfirmDelete} abortModal={abortModal}/>
+        <ModalConfirm modalConfirmDelete={modalConfirmDelete} abortModal={abortModal} idCard={idCard}/>
         <Routes>
           <Route
             path="/"

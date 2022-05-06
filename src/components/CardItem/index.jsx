@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import { delMovie } from "../../utils";
+// import { delMovie } from "../../utils";
 import { Link } from "react-router-dom";
 import { BsPencilFill } from "react-icons/bs";
 
@@ -7,7 +7,8 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
   // console.log('---->', cardData);
 
   const handleDelete = (id) => {
-    sonoincarditemelodicoacardlist();
+    sonoincarditemelodicoacardlist(id);
+    console.log('id della carta', id);
     // delMovie(id).then(() => {
     //   window.location.reload(false);
     // });

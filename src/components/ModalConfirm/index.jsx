@@ -1,10 +1,11 @@
 import styles from "./styles.module.scss";
 import { AiFillDelete } from "react-icons/ai";
+import { delMovie } from "../../utils";
 
 export const ModalConfirm = ({
   modalConfirmDelete,
   abortModal,
-  setdelCard,
+  idCard,
 }) => {
   const visible = modalConfirmDelete.visible || false;
   const overlay = modalConfirmDelete.overlay || false;
@@ -14,9 +15,9 @@ export const ModalConfirm = ({
     overlay ? styles.overlay : "",
   ];
 
-  const delCard = (value) => {
-    console.log("sei dentro la modale vai in app");
-    setdelCard(true);
+  const delCard = (idCard) => {
+    console.log("sei dentro la modale e stai eliminando la card");
+    delMovie(idCard).then(() => window.location.reload(false));
   };
 
   const abortdelCard = () => {
@@ -37,7 +38,7 @@ export const ModalConfirm = ({
             </div>
             <p>Vuoi eliminare questa Card?</p>
             <div className={styles.Btns}>
-              <button onClick={() => delCard()} className={styles.yesbtn}>
+              <button onClick={() => delCard(idCard)} className={styles.yesbtn}>
                 sì
               </button>
               <button onClick={() => abortdelCard()} className={styles.nobtn}>

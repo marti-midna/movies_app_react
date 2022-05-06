@@ -16,9 +16,9 @@ function Home({parloadApp}) {
   //     getMovies().then((data) => setMoviesData(data));
   // })
 
-  const hounvaluechevaacardlist = (value) => {
-    parloadApp(value); 
-    console.log('sei su home');
+  const hounvaluechevaacardlist = (id) => {
+    parloadApp(id); 
+    console.log('sei su home e questo è l id della card:', id);
   }
   return (
     <div className={styles.Home}>

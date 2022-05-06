@@ -10,12 +10,9 @@ export default function CardList({ searchInput, parloadHome }) {
     getMovies().then((data) => setMoviesData(data));
   }, []);
 
-  const sonoincardlist = () => {
-    console.log('sei in cardlist bitch');
-    parloadHome({
-      visible: true,
-      overlay: true,
-    })
+  const sonoincardlist = (id) => {
+    console.log('sei in cardlist bitch', id);
+    parloadHome(id)
   }
 
   return (
