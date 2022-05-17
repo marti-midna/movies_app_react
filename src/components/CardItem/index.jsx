@@ -1,9 +1,9 @@
 import styles from "./styles.module.scss";
 // import { delMovie } from "../../utils";
 import { Link } from "react-router-dom";
-import { BsPencilFill } from "react-icons/bs";
+import { TiDelete, TiCog } from "react-icons/ti";
 
-export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
+export function CardItem({ cardData, sonoincarditemelodicoacardlist, viewCardincardlist }) {
   // console.log('---->', cardData);
 
   const handleDelete = (id) => {
@@ -14,6 +14,11 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
     // });
   };
 
+  const viewCard = (id) => {
+    console.log('sei dentro la tua futura modale', id);
+    viewCardincardlist(id);
+  }
+
   return (
     <div className={styles.Carditem} key={cardData.id}>
       <div className={styles.Btns}>        
@@ -21,9 +26,9 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
           to={`/edit-movie/${cardData.id}`}
           style={{ textDecoration: "none" }}
         >
-          <button><BsPencilFill color="#444444"/></button>
+          <button><TiCog size="1.5rem"/></button>
         </Link>
-        <button onClick={() => handleDelete(cardData.id)}>✖️</button>
+        <button onClick={() => handleDelete(cardData.id)}><TiDelete size="1.5rem"/></button>
       </div>
         
 
@@ -31,12 +36,12 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist }) {
         <h2>{cardData?.title}</h2>
         <p>({cardData?.year})</p>
       </div>
-      <div className={styles.ImgFilm}>
+      <div className={styles.ImgFilm} onClick={() => viewCard(cardData.id)}>
         <img src={cardData?.poster} alt={cardData?.title}></img>
       </div>
-      <div className={styles.DescriptionTitle}>
+      {/* <div className={styles.DescriptionTitle}>
         <p>{cardData?.description}</p>
-      </div>
+      </div> */}
       <div className={styles.Genres}>
         <ul>
           {cardData.genres &&

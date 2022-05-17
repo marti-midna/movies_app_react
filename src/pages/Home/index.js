@@ -1,9 +1,10 @@
 import styles from "./styles.module.scss";
 import CardList from "../../components/CardList";
 import { useState } from "react";
+import Credits from "../../components/Credits";
 // import { getMovies } from '../../utils';
 
-function Home({parloadApp}) {
+function Home({parloadApp, viewCardinApp}) {
   const [searchInput, setSearchInput] = useState("");
   // const [moviesData, setMoviesData] = useState([]);
 
@@ -20,20 +21,27 @@ function Home({parloadApp}) {
     parloadApp(id); 
     console.log('sei su home e questo è l id della card:', id);
   }
+
+  const viewCardinHome = (id) => {
+    console.log('sei dentro home e questo è il tuo id: ',id)
+    viewCardinApp(id);
+  }
+
   return (
     <div className={styles.Home}>
       <div className={styles.Search}>
-        <label htmlFor="search">Search by title or categories:</label>
+        <label htmlFor="search"></label>
         <input
           onChange={(e) => searchItems(e.target.value)}
           type="text"
           id="search"
           name="search"
-          placeholder="title or categories"
+          placeholder="search by title or categories"
           value={searchInput}
         />
       </div>
-      <CardList  searchInput={searchInput} parloadHome={hounvaluechevaacardlist}/>
+      <CardList  searchInput={searchInput} parloadHome={hounvaluechevaacardlist} viewCardinHome={viewCardinHome}/>
+      <Credits/>
     </div>
   );
 }

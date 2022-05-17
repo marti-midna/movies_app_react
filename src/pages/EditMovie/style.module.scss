@@ -1,15 +1,27 @@
 .EditMovie {
     width:100vw;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1.5rem;
+
+    .CardItem {
+        width:15%;
+    }
 
     .ModifySection {
         display: flex;
         flex-direction: column;
         padding-top: 0.6rem;
+        width: 40%;
+
+        h2 {
+            color: white;
+            margin: 0;
+        }
     }
 
     form {
-        width: 100vh;
         padding: 1rem 0rem;
         
         input {
@@ -21,4 +33,17 @@
         }
     }
     
+}
+
+@media only screen and (max-width: 480px) {
+
+    h2 {
+        text-align: center;
+    }
+
+    .EditMovie {
+        .ModifySection {
+            width: 90%;
+        }
+    }
 }

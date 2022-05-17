@@ -1,0 +1,37 @@
+.credits_container {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    color: black;
+    transition: 1s;
+}
+
+.credits_container span {
+	width: 0px;
+	overflow: hidden;
+	transition: 1s;
+	text-align: center;
+    font-size: 0.8rem;
+
+}
+
+.credits_container:hover{
+    width: 116px;
+}
+
+.credits_container:hover span {
+	padding: 2px;
+	width: max-content;
+}
+// .credits_container:hover:before {
+//     content: "© Martina Aruta";
+// }
+

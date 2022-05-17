@@ -9,6 +9,7 @@ export const ModalConfirm = ({
 }) => {
   const visible = modalConfirmDelete.visible || false;
   const overlay = modalConfirmDelete.overlay || false;
+  
   const classes = [
     styles.thisComponent,
     visible ? styles.visible : "",

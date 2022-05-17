@@ -3,3 +3,12 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+@media only screen and (max-width: 480px) {
+
+    
+    .Cardlist {
+        padding-top: 1rem;
+    }
+    
+}

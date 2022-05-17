@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Alert } from "./components/Alert";
 import { ModalConfirm } from "./components/ModalConfirm";
 import { Loading } from "./components/Loading";
+import CardFullInfo from "./components/CardFullInfo";
 
 const Home = lazy(() => import(/* webpackChunkName: "home" */ "./pages/Home"));
 const AddMovie = lazy(() =>
@@ -62,7 +63,26 @@ function App() {
     setModalConfirmDelete(value);
   }
 
-  // const [delCard, setdelCard] = useState(false);
+  //modalcardfullifo
+  const [viewCardFullInfo, setViewCardFullInfo] = useState({
+    visible:false,
+    overlay: false,
+  })
+
+  const [idCardView, setIdCardView] = useState();
+
+  const viewCardinApp = (id) => {
+    console.log('questo è il tuo id dentro app js:', id)
+    setViewCardFullInfo({
+      visible: true,
+      overlay: true,
+    });
+    setIdCardView(id);
+  }
+
+  const abortViewCardAllInfo = (value) => {
+    setViewCardFullInfo(value)
+  }
 
   return (
     <Router>
@@ -70,12 +90,13 @@ function App() {
         <Header />
         <Alert alert={alert} hideCallback={hideAlert} />
         <ModalConfirm modalConfirmDelete={modalConfirmDelete} abortModal={abortModal} idCard={idCard}/>
+        <CardFullInfo viewCardFullInfo={viewCardFullInfo} idCardView={idCardView} abortViewCardAllInfo={abortViewCardAllInfo}/>
         <Routes>
           <Route
             path="/"
             element={
               <Suspense fallback={<Loading />}>
-                <Home parloadApp={parloadApp}/>
+                <Home parloadApp={parloadApp} viewCardinApp={viewCardinApp}/>
               </Suspense>
             }
           />

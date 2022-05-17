@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <div>
+    <div className={styles.all}>
       <header>
         <h1>Movie.archive</h1>
         <nav className={styles.NavBar}>
