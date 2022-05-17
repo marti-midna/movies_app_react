@@ -1,7 +1,7 @@
 
 
 export async function getMovies(id = "") {
-
+    console.log('id in utils',id);
     const response = await fetch(`https://edgemony-backend.herokuapp.com/movies/${id}`)
     const res = await response.json();
     console.log(response, res);

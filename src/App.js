@@ -90,6 +90,7 @@ function App() {
         <Header />
         <Alert alert={alert} hideCallback={hideAlert} />
         <ModalConfirm modalConfirmDelete={modalConfirmDelete} abortModal={abortModal} idCard={idCard}/>
+        
         <CardFullInfo viewCardFullInfo={viewCardFullInfo} idCardView={idCardView} abortViewCardAllInfo={abortViewCardAllInfo}/>
         <Routes>
           <Route

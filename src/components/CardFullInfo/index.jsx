@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { TiDelete } from "react-icons/ti";
 
 const CardFullInfo = ({ idCardView, viewCardFullInfo, abortViewCardAllInfo }) => {
-  const [movieData, setMovieData] = useState([]);
+  const [movie, setMovieData] = useState({});
 
   const visible = viewCardFullInfo.visible || false;
   const overlay = viewCardFullInfo.overlay || false;
@@ -17,7 +17,7 @@ const CardFullInfo = ({ idCardView, viewCardFullInfo, abortViewCardAllInfo }) =>
 
   useEffect(() => {
     getMovies(idCardView).then((data) => setMovieData(data));
-  }, []);
+  }, [idCardView]);
 
   const abortViewCardInfo = () => {
     console.log("stai chiudendo la modale view card info");
@@ -32,8 +32,6 @@ const CardFullInfo = ({ idCardView, viewCardFullInfo, abortViewCardAllInfo }) =>
       <div onClick={() => abortViewCardInfo()} className={styles.closebtn}>
         <TiDelete size="1.5rem" />
       </div>
-      {movieData &&
-        movieData.map((movie) => (
           <div key={movie.id} className={styles.modal}>
             <div className={styles.img_container}>
               <img src={movie.poster} alt={movie.title}></img>
@@ -45,7 +43,6 @@ const CardFullInfo = ({ idCardView, viewCardFullInfo, abortViewCardAllInfo }) =>
               <p>{movie.genres}</p>
             </div>
           </div>
-        ))}
     </div>
   );
 };
