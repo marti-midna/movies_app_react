@@ -14,9 +14,9 @@ export const Header = () => {
             <li>
               <Link to="/add-movie">Add Movie</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/filterwithcategory">Filtra per Categoria</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </header>
