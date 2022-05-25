@@ -31,7 +31,9 @@
 	padding: 2px;
 	width: max-content;
 }
-// .credits_container:hover:before {
-//     content: "© Martina Aruta";
-// }
 
+@media only screen and (max-width: 480px) {
+    .credits_container {
+        display: none;
+    }
+}
