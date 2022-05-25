@@ -26,7 +26,7 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist, viewCardinc
           to={`/edit-movie/${cardData.id}`}
           style={{ textDecoration: "none" }}
         >
-          <button><TiCog size="1.5rem"/></button>
+          <button><TiCog size="1.5rem" /></button>
         </Link>
         <button onClick={() => handleDelete(cardData.id)}><TiDelete size="1.5rem"/></button>
       </div>
