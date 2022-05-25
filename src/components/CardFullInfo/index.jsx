@@ -23,7 +23,6 @@ const CardFullInfo = ({
       overlay: false,
     });
   };
-{console.log(idCardView)}
   return (
     <div className={classes.join(" ")}>
       <div onClick={() => abortViewCardInfo()} className={styles.closebtn}>
