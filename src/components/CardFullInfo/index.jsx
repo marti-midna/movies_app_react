@@ -1,5 +1,4 @@
 import styles from "./styles.module.scss";
-import { useState } from "react";
 import { TiDelete } from "react-icons/ti";
 
 const CardFullInfo = ({
