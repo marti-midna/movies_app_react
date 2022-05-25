@@ -9,10 +9,10 @@ export const Header = () => {
         <nav className={styles.NavBar}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link className={styles.hover_underline_animation} to="/">HOME</Link>
             </li>
             <li>
-              <Link to="/add-movie">Add Movie</Link>
+              <Link className={styles.hover_underline_animation} to="/add-movie">ADD MOVIE</Link>
             </li>
             {/* <li>
               <Link to="/filterwithcategory">Filtra per Categoria</Link>

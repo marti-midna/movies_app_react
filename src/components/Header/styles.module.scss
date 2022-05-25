@@ -24,16 +24,38 @@
         gap: 30px;
         list-style: none;
         font-weight: 600;
+        
+        li {
 
-            a {
-                text-decoration: none;
+            .hover_underline_animation:link,
+            .hover_underline_animation:visited {
+                display: inline-block;
+                position: relative;
                 color: white;
+                text-decoration: none;
+              }
+
+              .hover_underline_animation:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: white;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+              }
+              
+              .hover_underline_animation:hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+              }
+        
+
             }
         
-            a:hover {
-                text-decoration: 2px underline;
-                color: white;
-            }
         }
         
     }
