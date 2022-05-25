@@ -3,7 +3,11 @@ import { getMovies } from "../../utils";
 import { useEffect, useState } from "react";
 import { TiDelete } from "react-icons/ti";
 
-const CardFullInfo = ({ idCardView, viewCardFullInfo, abortViewCardAllInfo }) => {
+const CardFullInfo = ({
+  idCardView,
+  viewCardFullInfo,
+  abortViewCardAllInfo,
+}) => {
   const [movie, setMovieData] = useState({});
 
   const visible = viewCardFullInfo.visible || false;
@@ -15,34 +19,34 @@ const CardFullInfo = ({ idCardView, viewCardFullInfo, abortViewCardAllInfo }) =>
     overlay ? styles.overlay : "",
   ];
 
-  useEffect(() => {
-    getMovies(idCardView).then((data) => setMovieData(data));
-  }, [idCardView]);
+  // useEffect(() => {
+  //   getMovies(idCardView).then((data) => setMovieData(data));
+  // }, [idCardView]);
 
   const abortViewCardInfo = () => {
     console.log("stai chiudendo la modale view card info");
     abortViewCardAllInfo({
-        visible: false,
-        overlay: false,
-    })
+      visible: false,
+      overlay: false,
+    });
   };
-
+{console.log(idCardView)}
   return (
     <div className={classes.join(" ")}>
       <div onClick={() => abortViewCardInfo()} className={styles.closebtn}>
         <TiDelete size="1.5rem" />
       </div>
-          <div key={movie.id} className={styles.modal}>
-            <div className={styles.img_container}>
-              <img src={movie.poster} alt={movie.title}></img>
-            </div>
-            <div className={styles.info}>
-              <h2>{movie.title}</h2>
-              <p>{movie.year}</p>
-              <p>{movie.description}</p>
-              <p>{movie.genres}</p>
-            </div>
-          </div>
+      <div key={idCardView?.id} className={styles.modal}>
+        <div className={styles.img_container}>
+          <img src={idCardView?.poster} alt={idCardView?.title}></img>
+        </div>
+        <div className={styles.info}>
+          <h2>{idCardView?.title}</h2>
+          <p>{idCardView?.year}</p>
+          <p>{idCardView?.description}</p>
+          <p className={styles.genres}>{idCardView?.genres.join(" - ")}</p>
+        </div>
+      </div>
     </div>
   );
 };

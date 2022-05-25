@@ -22,9 +22,9 @@ function Home({parloadApp, viewCardinApp}) {
     console.log('sei su home e questo è l id della card:', id);
   }
 
-  const viewCardinHome = (id) => {
-    console.log('sei dentro home e questo è il tuo id: ',id)
-    viewCardinApp(id);
+  const viewCardinHome = (cardData) => {
+    console.log('sei dentro home e questo è il tuo id: ', cardData)
+    viewCardinApp(cardData);
   }
 
   return (

@@ -15,9 +15,9 @@ export default function CardList({ searchInput, parloadHome, viewCardinHome }) {
     parloadHome(id)
   }
 
-  const viewCardincardlist = (id) => {
-    console.log('sei in cardlist col valore del tuo id:' , id)
-    viewCardinHome(id);
+  const viewCardincardlist = (cardData) => {
+    console.log('sei in cardlist col valore del tuo id:' , cardData)
+    viewCardinHome(cardData);
   }
 
   return (

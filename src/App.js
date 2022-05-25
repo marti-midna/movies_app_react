@@ -71,13 +71,14 @@ function App() {
 
   const [idCardView, setIdCardView] = useState();
 
-  const viewCardinApp = (id) => {
-    console.log('questo è il tuo id dentro app js:', id)
+  const viewCardinApp = (cardData) => {
+    console.log('questo è il tuo oggetto dentro app js:', cardData)
     setViewCardFullInfo({
       visible: true,
       overlay: true,
     });
-    setIdCardView(id);
+    setIdCardView(cardData);
+    console.log(idCardView)
   }
 
   const abortViewCardAllInfo = (value) => {

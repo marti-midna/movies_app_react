@@ -14,9 +14,9 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist, viewCardinc
     // });
   };
 
-  const viewCard = (id) => {
-    console.log('sei dentro la tua futura modale', id);
-    viewCardincardlist(id);
+  const viewCard = (cardData) => {
+    console.log('sei dentro la tua futura modale', cardData);
+    viewCardincardlist(cardData);
   }
 
   return (
@@ -36,7 +36,7 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist, viewCardinc
         <h2>{cardData?.title}</h2>
         <p>({cardData?.year})</p>
       </div>
-      <div className={styles.ImgFilm} onClick={() => viewCard(cardData.id)}>
+      <div className={styles.ImgFilm} onClick={() => viewCard(cardData)}>
         <img src={cardData?.poster} alt={cardData?.title}></img>
       </div>
       {/* <div className={styles.DescriptionTitle}>
@@ -51,10 +51,3 @@ export function CardItem({ cardData, sonoincarditemelodicoacardlist, viewCardinc
     </div>
   );
 }
-//
-
-//MODO ALTERNATIVO DI CONTROLLARE SE I GENERI CI SONO E SE CI SONO VANNO MAPPATI
-//                    {
-//     cardData?.genres?.map((genre, index) =>
-//         (<li key={index}>{genre}</li>))
-// }
