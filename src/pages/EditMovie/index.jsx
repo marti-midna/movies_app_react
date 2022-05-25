@@ -1,4 +1,4 @@
-import style from "./style.module.scss";
+import styles from "./styles.module.scss";
 import { Input } from "../../components/Input";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -34,10 +34,10 @@ const EditMovie = ({ isVisible, setModalVisibility, speaktoalertstate }) => {
         text="Fantastico! La tua Card è stata modificata! Torna alla Home"
       /> */}
 
-      <div className={style.EditMovie}>
+      <div className={styles.EditMovie}>
         {console.log(movieData)}
         <CardItem cardData={movieData} />
-        <div className={style.ModifySection}>
+        <div className={styles.ModifySection}>
           <h2>Modifica i campi della card</h2>
           <Input setModalVisibility={setModalVisibility} dicoadAddMoviechehofattounaput={facciounaPut} callType="PUT" />
         </div>

@@ -1,17 +1,12 @@
 import styles from "./styles.module.scss";
-// import { delMovie } from "../../utils";
 import { Link } from "react-router-dom";
 import { TiDelete, TiCog } from "react-icons/ti";
 
 export function CardItem({ cardData, sonoincarditemelodicoacardlist, viewCardincardlist }) {
-  // console.log('---->', cardData);
 
   const handleDelete = (id) => {
     sonoincarditemelodicoacardlist(id);
     console.log('id della carta', id);
-    // delMovie(id).then(() => {
-    //   window.location.reload(false);
-    // });
   };
 
   const viewCard = (cardData) => {
