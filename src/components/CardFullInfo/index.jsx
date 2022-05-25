@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
-import { getMovies } from "../../utils";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TiDelete } from "react-icons/ti";
 
 const CardFullInfo = ({
@@ -8,7 +7,6 @@ const CardFullInfo = ({
   viewCardFullInfo,
   abortViewCardAllInfo,
 }) => {
-  const [movie, setMovieData] = useState({});
 
   const visible = viewCardFullInfo.visible || false;
   const overlay = viewCardFullInfo.overlay || false;
@@ -18,10 +16,6 @@ const CardFullInfo = ({
     visible ? styles.visible : "",
     overlay ? styles.overlay : "",
   ];
-
-  // useEffect(() => {
-  //   getMovies(idCardView).then((data) => setMovieData(data));
-  // }, [idCardView]);
 
   const abortViewCardInfo = () => {
     console.log("stai chiudendo la modale view card info");
