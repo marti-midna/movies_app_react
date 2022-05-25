@@ -23,6 +23,7 @@
 
     form {
         padding: 1rem 0rem;
+        margin: 0;
         
         input {
             margin: 0;
@@ -44,6 +45,19 @@
     .EditMovie {
         .ModifySection {
             width: 90%;
+        }
+
+        form {
+            padding: 1rem 0rem;
+            
+            
+            input {
+                margin: 0;
+            }
+    
+            input[type="submit"] {
+                margin: 0;
+            }
         }
     }
 }
